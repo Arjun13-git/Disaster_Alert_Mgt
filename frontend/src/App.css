@@ -7,6 +7,14 @@ body{
   background-color: #fdfdfd;
   color: #333;
 }
+
+body.dark-mode {
+  background-image: url('./assets/dark_background.jpg');
+  background-size: cover;
+  color: #f0f0f0;
+  background-color: #1a1a1a;
+}
+
 nav{
   background-color: #dc2626;
   padding: 1rem;
@@ -15,6 +23,11 @@ nav{
   align-items: center;
   box-shadow: 0 2px 4px rgba(0,0,0,0.2 );
 }
+
+nav.dark-nav {
+  background-color: #1e3a8a;
+}
+
 nav a{
   text-decoration:none;
   color: white;
@@ -31,6 +44,24 @@ nav a:hover{
 nav a.active{
   border-bottom: 2px solid white;
 }
+
+.theme-toggle {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+}
+
 .landing-container{
   text-align: center;
   padding:2rem;
