@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useContext } from 'react';
-import { FaBell, FaShieldAlt, FaInfoCircle, FaClipboardList, FaMedkit, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import React, { useState, useEffect, useContext, useRef } from 'react';
+import { FaBell, FaShieldAlt, FaInfoCircle, FaClipboardList, FaMedkit, FaChevronLeft, FaChevronRight, FaMapMarkerAlt, FaMobileAlt, FaHeartbeat, FaHandHoldingHeart, FaHandsHelping, FaExclamationTriangle } from 'react-icons/fa';
 import { useTheme } from '../context/ThemeContext';
 import { data } from '../context/Usercontext';
 import image1 from '../assets/image1.png';
@@ -14,7 +14,47 @@ const Home = () => {
   const [weatherData, setWeatherData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [currentSlide, setCurrentSlide] = useState(0);
-
+  
+  
+  const welcomeRef = useRef(null);
+  const weatherRef = useRef(null);
+  const alertsRef = useRef(null);
+  const tipsRef = useRef(null);
+  const statsRef = useRef(null);
+  const resourcesRef = useRef(null);
+  const emergencyContactsRef = useRef(null);
+  
+  const useOnScreen = (ref) => {
+    const [isIntersecting, setIntersecting] = useState(false);
+    
+    useEffect(() => {
+      const observer = new IntersectionObserver(
+        ([entry]) => setIntersecting(entry.isIntersecting),
+        { threshold: 0.1 }
+      );
+      
+      if (ref.current) {
+        observer.observe(ref.current);
+      }
+      
+      return () => {
+        if (ref.current) {
+          observer.unobserve(ref.current);
+        }
+      };
+    }, [ref]);
+    
+    return isIntersecting;
+  };
+  
+  const welcomeVisible = useOnScreen(welcomeRef);
+  const weatherVisible = useOnScreen(weatherRef);
+  const alertsVisible = useOnScreen(alertsRef);
+  const tipsVisible = useOnScreen(tipsRef);
+  const statsVisible = useOnScreen(statsRef);
+  const resourcesVisible = useOnScreen(resourcesRef);
+  const emergencyContactsVisible = useOnScreen(emergencyContactsRef);
+  
   const carouselImages = [
     {
       src: image1,
@@ -33,14 +73,14 @@ const Home = () => {
       caption: 'Emergency shelter setup during disasters'
     }
   ];
-
+  
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prevSlide) => (prevSlide + 1) % carouselImages.length);
     }, 5000);
     return () => clearInterval(interval);
   }, [carouselImages.length]);
-
+  
   useEffect(() => {
     setTimeout(() => {
       setWeatherData({
@@ -86,6 +126,30 @@ const Home = () => {
     { id: 3, icon: <FaMedkit />, tip: 'Keep a first aid kit accessible' },
     { id: 4, icon: <FaInfoCircle />, tip: 'Stay informed about local emergency alerts' }
   ];
+  
+  // Disaster statistics
+  const disasterStats = [
+    { label: 'Disasters Reported', value: '127', icon: <FaExclamationTriangle /> },
+    { label: 'People Rescued', value: '1,423', icon: <FaHeartbeat /> },
+    { label: 'Relief Camps', value: '32', icon: <FaHandHoldingHeart /> },
+    { label: 'Volunteers', value: '845', icon: <FaHandsHelping /> }
+  ];
+  
+  // Emergency contacts
+  const emergencyContacts = [
+    { service: 'Emergency Helpline', number: '999', icon: <FaMobileAlt /> },
+    { service: 'Flood Control', number: '1800-222-555', icon: <FaMapMarkerAlt /> },
+    { service: 'Fire Services', number: '1800-101-101', icon: <FaExclamationTriangle /> },
+    { service: 'Medical Emergency', number: '1800-103-104', icon: <FaMedkit /> }
+  ];
+  
+  // Resources
+  const resources = [
+    { title: 'Disaster Preparedness Guide', description: 'Comprehensive guide to prepare for natural disasters' },
+    { title: 'Emergency Contact Directory', description: 'Find all emergency contacts in your area' },
+    { title: 'First Aid Training', description: 'Free online training for basic first aid skills' },
+    { title: 'Community Support Network', description: 'Connect with local support groups and resources' }
+  ];
 
   const handleAlertClick = (alert) => {
     setActiveAlert(alert);
@@ -97,9 +161,7 @@ const Home = () => {
 
   return (
     <div className={`home-container ${darkMode ? 'dark-mode' : ''}`}>
-   
      
-
       <section className="carousel-section">
         <div className="carousel-container">
           <button className="carousel-button prev" onClick={prevSlide}>
@@ -136,13 +198,21 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className="welcome-section">
+      
+      <section 
+        ref={welcomeRef} 
+        className={`welcome-section animate-section ${welcomeVisible ? 'visible' : ''}`}
+      >
         <h1>Welcome to Disaster Alert System</h1>
         <p className="welcome-message">
           {userdata ? `Hello, ${userdata.Username || 'User'}!` : 'Stay safe and informed during emergencies'}
         </p>
       </section>
-      <section className="weather-card">
+     
+      <section 
+        ref={weatherRef}
+        className={`weather-card animate-section ${weatherVisible ? 'visible' : ''}`}
+      >
         <h2>Current Weather</h2>
         {loading ? (
           <p>Loading weather data...</p>
@@ -160,8 +230,10 @@ const Home = () => {
         )}
       </section>
 
-    
-      <section className="alerts-section">
+      <section 
+        ref={alertsRef}
+        className={`alerts-section animate-section ${alertsVisible ? 'visible' : ''}`}
+      >
         <h2><FaBell /> Active Alerts</h2>
         <div className="alerts-container">
           {alerts.length > 0 ? (
@@ -183,8 +255,10 @@ const Home = () => {
         </div>
       </section>
 
-     
-      <section className="safety-tips">
+      <section 
+        ref={tipsRef}
+        className={`safety-tips animate-section ${tipsVisible ? 'visible' : ''}`}
+      >
         <h2>Safety Tips</h2>
         <div className="tips-container">
           {safetyTips.map(tip => (
@@ -195,7 +269,60 @@ const Home = () => {
           ))}
         </div>
       </section>
-
+      
+      {/* New Disaster Statistics Section */}
+      <section 
+        ref={statsRef}
+        className={`stats-section animate-section ${statsVisible ? 'visible' : ''}`}
+      >
+        <h2>Disaster Response Statistics</h2>
+        <div className="stats-container">
+          {disasterStats.map((stat, index) => (
+            <div key={index} className="stat-card">
+              <div className="stat-icon">{stat.icon}</div>
+              <div className="stat-value">{stat.value}</div>
+              <div className="stat-label">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+      
+      {/* New Resources Section */}
+      <section 
+        ref={resourcesRef}
+        className={`resources-section animate-section ${resourcesVisible ? 'visible' : ''}`}
+      >
+        <h2>Disaster Management Resources</h2>
+        <div className="resources-container">
+          {resources.map((resource, index) => (
+            <div key={index} className="resource-card">
+              <h3>{resource.title}</h3>
+              <p>{resource.description}</p>
+              <button className="resource-button">Access Resource</button>
+            </div>
+          ))}
+        </div>
+      </section>
+      
+      {/* New Emergency Contacts Section */}
+      <section 
+        ref={emergencyContactsRef}
+        className={`emergency-contacts-section animate-section ${emergencyContactsVisible ? 'visible' : ''}`}
+      >
+        <h2>Emergency Contacts</h2>
+        <div className="contacts-container">
+          {emergencyContacts.map((contact, index) => (
+            <div key={index} className="contact-card">
+              <div className="contact-icon">{contact.icon}</div>
+              <div className="contact-details">
+                <h3>{contact.service}</h3>
+                <p className="contact-number">{contact.number}</p>
+              </div>
+              <button className="call-now-button">Call</button>
+            </div>
+          ))}
+        </div>
+      </section>
      
       {activeAlert && (
         <div className="modal-overlay" onClick={closeAlertDetails}>
