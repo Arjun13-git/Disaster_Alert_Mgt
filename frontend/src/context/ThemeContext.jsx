@@ -10,7 +10,7 @@ export const ThemeProvider = ({ children }) => {
   useEffect(() => {
     localStorage.setItem('darkMode', darkMode);
     
-    // Apply dark mode class to body
+   
     if (darkMode) {
       document.body.classList.add('dark-mode');
     } else {

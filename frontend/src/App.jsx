@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
@@ -9,6 +9,7 @@ import './App.css';
 import LoginPage from './pages/login';
 import SignupPage from './pages/signup';
 import { ThemeProvider } from './context/ThemeContext';
+import Usercontext, { data } from './context/Usercontext';
 
 const Layout = ({ children }) => (
   <>
@@ -18,9 +19,10 @@ const Layout = ({ children }) => (
 );
 
 function App() {
+  let{userdata,setuserdata}=useContext(data)
   return (
     <ThemeProvider>
-      <Router>
+     
         <Routes>
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignupPage />} />
@@ -32,7 +34,6 @@ function App() {
           <Route path="/profile" element={<Layout><Profile /></Layout>} />
           <Route path="/sos" element={<Layout><SOS /></Layout>} />
         </Routes>
-      </Router>
     </ThemeProvider>
   );
 }
