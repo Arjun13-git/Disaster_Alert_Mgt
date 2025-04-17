@@ -15,8 +15,8 @@ const LoginPage = () => {
     e.preventDefault()
     try{
       let data1=await axios.post(serverUrl+"/login",{
-          email:Email,
-          password:Password
+          email:email,
+          password:password
       },{withCredentials:true})
          await getuserdata()
               setuserdata(data1.data.user)

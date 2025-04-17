@@ -21,10 +21,7 @@ const Navbar=()=>{
         <FaUser size={24} />
         <span>Profile</span>
       </Link>
-      <Link to="/sos" className={isActive('/sos') ? 'active' : ''}>
-        <FaPhoneAlt size={24} />
-        <span>SOS</span>
-      </Link>
+   
       <button onClick={toggleDarkMode} className="theme-toggle">
         {darkMode ? <FaSun size={24} /> : <FaMoon size={24} />}
       </button>

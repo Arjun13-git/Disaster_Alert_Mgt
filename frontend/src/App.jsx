@@ -10,11 +10,13 @@ import LoginPage from './pages/login';
 import SignupPage from './pages/signup';
 import { ThemeProvider } from './context/ThemeContext';
 import Usercontext, { data } from './context/Usercontext';
+import SOSButton from './components/SOSButton';
 
 const Layout = ({ children }) => (
   <>
     <Navbar />
     {children}
+    <SOSButton />
   </>
 );
 
