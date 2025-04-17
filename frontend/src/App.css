@@ -173,7 +173,16 @@ nav a.active{
 .dark-mode .call-button {
   background-color: #f87171;
 }
-
+.logout-button {
+  background-color: #4adb8b;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 15px;
+  margin-left: 10px;
+  cursor: pointer;
+}
 .close-button {
   background-color: #555;
   color: white;
@@ -183,4 +192,89 @@ nav a.active{
   margin-top: 15px;
   margin-left: 10px;
   cursor: pointer;
+}
+
+/* Profile styles */
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.profile-picture-container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.profile-picture-container:hover {
+  transform: scale(1.05);
+}
+
+.profile-picture {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: #e5e5e5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #666;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: 3px solid #dc2626;
+}
+
+.dark-mode .profile-picture {
+  background-color: #444;
+  color: #ddd;
+  border-color: #1e3a8a;
+}
+
+.profile-modal {
+  max-width: 500px;
+}
+
+.profile-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.profile-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #e5e5e5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #666;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode .profile-avatar {
+  background-color: #444;
+  color: #ddd;
+}
+
+.profile-info {
+  width: 100%;
+  text-align: left;
+}
+
+.profile-info p {
+  margin: 10px 0;
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+}
+
+.dark-mode .profile-info p {
+  border-bottom: 1px solid #555;
 }
