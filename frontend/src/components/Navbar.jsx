@@ -2,6 +2,7 @@ import React from "react";
 import {Link,useLocation} from 'react-router-dom';
 import {FaHome,FaMapMarkerAlt,FaUser,FaPhoneAlt,FaMoon,FaSun} from 'react-icons/fa';
 import { useTheme } from '../context/ThemeContext';
+import logo from '../assets/logo.png';
 
 const Navbar=()=>{
     const location=useLocation();
@@ -9,6 +10,9 @@ const Navbar=()=>{
     const isActive=(path)=>location.pathname===path;
     return(
     <nav className={darkMode ? 'dark-nav' : ''}>
+      <div className="logo-container">
+        <img src={logo} alt="Disaster Alert System Logo" className="nav-logo" />
+      </div>
       <Link to="/home" className={isActive('/home') ? 'active' : ''}>
         <FaHome size={24} />
         <span>Home</span>
