@@ -27,6 +27,7 @@ function SignupPage() {
         console.log(data1)
       }catch(err){
         console.log(err)
+        alert(err.response?.data?.message || "Signup failed")
       } 
     }
   return (
@@ -40,8 +41,8 @@ function SignupPage() {
               type="text"
               id="name"
               placeholder="Enter your name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
+              value={Username}
+              onChange={(e) => setUsername(e.target.value)}
               required
             />
           </div>

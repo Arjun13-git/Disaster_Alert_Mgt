@@ -10,10 +10,12 @@ function Usercontext({children}) {
     const getuserdata=async()=>{  
       try{
         let data1=await axios.get(serverUrl+"/getuserdata",{withCredentials:true})
-        setuserdata(data1.data)
+        setuserdata(data1.data.user)
       }catch(err){
-        navigate("/login")
         console.log(err)
+        if (window.location.pathname !== '/login' && window.location.pathname !== '/signup') {
+          navigate("/login")
+        }
       }
     }
     const value={
