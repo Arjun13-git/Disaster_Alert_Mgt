@@ -1,6 +1,6 @@
 import React from "react";
 import {Link,useLocation} from 'react-router-dom';
-import {FaHome,FaMapMarkerAlt,FaUser,FaPhoneAlt,FaMoon,FaSun} from 'react-icons/fa';
+import {FaHome,FaMapMarkerAlt,FaUser,FaPhoneAlt,FaMoon,FaSun,FaInfoCircle} from 'react-icons/fa';
 import { useTheme } from '../context/ThemeContext';
 import logo from '../assets/logo.png';
 
@@ -25,7 +25,10 @@ const Navbar=()=>{
         <FaUser size={24} />
         <span>Profile</span>
       </Link>
-   
+      <Link to="/about" className={isActive('/about') ? 'active' : ''}>
+        <FaInfoCircle size={24} />
+        <span>About Us</span>
+      </Link>
       <button onClick={toggleDarkMode} className="theme-toggle">
         {darkMode ? <FaSun size={24} /> : <FaMoon size={24} />}
       </button>

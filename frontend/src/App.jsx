@@ -5,12 +5,14 @@ import Home from './pages/Home';
 import Location from './pages/Location';
 import Profile from './pages/Profile';
 import SOS from './pages/SOS';
+import About from './pages/About';
 import './App.css';
 import LoginPage from './pages/login';
 import SignupPage from './pages/signup';
 import { ThemeProvider } from './context/ThemeContext';
 import Usercontext, { data } from './context/Usercontext';
 import SOSButton from './components/SOSButton';
+import 'leaflet/dist/leaflet.css';
 
 const Layout = ({ children }) => (
   <>
@@ -34,6 +36,7 @@ function App() {
           <Route path="/home" element={<Layout><Home /></Layout>} />
           <Route path="/location" element={<Layout><Location /></Layout>} />
           <Route path="/profile" element={<Layout><Profile /></Layout>} />
+          <Route path="/about" element={<Layout><About /></Layout>} />
           <Route path="/sos" element={<Layout><SOS /></Layout>} />
         </Routes>
     </ThemeProvider>
