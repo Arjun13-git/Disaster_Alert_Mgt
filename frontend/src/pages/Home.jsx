@@ -127,7 +127,6 @@ const Home = () => {
     { id: 4, icon: <FaInfoCircle />, tip: 'Stay informed about local emergency alerts' }
   ];
   
-  // Disaster statistics
   const disasterStats = [
     { label: 'Disasters Reported', value: '127', icon: <FaExclamationTriangle /> },
     { label: 'People Rescued', value: '1,423', icon: <FaHeartbeat /> },
@@ -135,7 +134,6 @@ const Home = () => {
     { label: 'Volunteers', value: '845', icon: <FaHandsHelping /> }
   ];
   
-  // Emergency contacts
   const emergencyContacts = [
     { service: 'Emergency Helpline', number: '999', icon: <FaMobileAlt /> },
     { service: 'Flood Control', number: '1800-222-555', icon: <FaMapMarkerAlt /> },
@@ -143,7 +141,6 @@ const Home = () => {
     { service: 'Medical Emergency', number: '1800-103-104', icon: <FaMedkit /> }
   ];
   
-  // Resources
   const resources = [
     { title: 'Disaster Preparedness Guide', description: 'Comprehensive guide to prepare for natural disasters' },
     { title: 'Emergency Contact Directory', description: 'Find all emergency contacts in your area' },
@@ -270,7 +267,6 @@ const Home = () => {
         </div>
       </section>
       
-      {/* New Disaster Statistics Section */}
       <section 
         ref={statsRef}
         className={`stats-section animate-section ${statsVisible ? 'visible' : ''}`}
@@ -287,7 +283,6 @@ const Home = () => {
         </div>
       </section>
       
-      {/* New Resources Section */}
       <section 
         ref={resourcesRef}
         className={`resources-section animate-section ${resourcesVisible ? 'visible' : ''}`}
@@ -304,7 +299,6 @@ const Home = () => {
         </div>
       </section>
       
-      {/* New Emergency Contacts Section */}
       <section 
         ref={emergencyContactsRef}
         className={`emergency-contacts-section animate-section ${emergencyContactsVisible ? 'visible' : ''}`}

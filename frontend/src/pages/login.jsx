@@ -29,6 +29,9 @@ const LoginPage = () => {
       alert(err.response.data.message)
     }
   }
+  const handleClose = () => {
+    navigate("/signup")
+  };
 
   return (
     <div className="login-container">
@@ -60,7 +63,7 @@ const LoginPage = () => {
           <button type="submit" className="login-button">Login</button>
         </form>
         <div className="signup-text">
-          Don't have an account? <a href="/signup">Sign up</a>
+          Don't have an account? <a href="/signup" onClick={handleClose}>Sign up </a>
         </div>
       </div>
     </div>
