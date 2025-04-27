@@ -8,7 +8,7 @@ import authRouter from "./routes/route.js"
 import cookieParser from "cookie-parser"
 import cors from "cors"
 app.use(cors({
-    origin: "http://localhost:5173",
+    origin: "https://frontend-dqbc.onrender.com",
     credentials: true
  }))
 app.use(cookieParser())
