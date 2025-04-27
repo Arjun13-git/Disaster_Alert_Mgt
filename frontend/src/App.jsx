@@ -23,7 +23,6 @@ const Layout = ({ children }) => (
 );
 
 function App() {
-  let{userdata,setuserdata}=useContext(data)
   return (
     <ThemeProvider>
      
@@ -42,4 +41,5 @@ function App() {
     </ThemeProvider>
   );
 }
+
 export default App
