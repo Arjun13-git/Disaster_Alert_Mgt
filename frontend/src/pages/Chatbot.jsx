@@ -17,26 +17,20 @@ const Chatbot = () => {
         <h2>AI Assistance</h2>
         
         <div className="chatbot-box">
-          {/* Chat Messages will appear here (optional) */}
        
 
         <div className="chatbot-input-container">
-          {/* Attach file button */}
           <button className="icon-button">
             <FaPaperclip size={20} />
           </button>
 
-          {/* Voice input button */}
           <button className="icon-button">
             <FaMicrophone size={20} />
           </button>
-
-          {/* Upload file button */}
           <button className="icon-button">
             <FaUpload size={20} />
           </button>
 
-          {/* Text input */}
           <input
             type="text"
             placeholder="Hi! How can I assist you today?"
@@ -45,7 +39,6 @@ const Chatbot = () => {
             onKeyDown={(e) => { if (e.key === 'Enter') handleSend(); }}
           />
 
-          {/* Send message button */}
           <button className="icon-button send-button" onClick={handleSend}>
             <FaPaperPlane size={20} />
           </button>
