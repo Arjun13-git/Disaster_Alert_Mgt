@@ -12,6 +12,7 @@ import SignupPage from './pages/signup';
 import { ThemeProvider } from './context/ThemeContext';
 import Usercontext, { data } from './context/Usercontext';
 import SOSButton from './components/SOSButton';
+import Chatbot from './pages/Chatbot';
 import 'leaflet/dist/leaflet.css';
 
 const Layout = ({ children }) => (
@@ -37,6 +38,7 @@ function App() {
           <Route path="/profile" element={<Layout><Profile /></Layout>} />
           <Route path="/about" element={<Layout><About /></Layout>} />
           <Route path="/sos" element={<Layout><SOS /></Layout>} />
+          <Route path="/chatbot" element={<Layout><Chatbot/></Layout>} />
         </Routes>
     </ThemeProvider>
   );
