@@ -29,10 +29,16 @@ const Navbar=()=>{
         <FaInfoCircle size={24} />
         <span>About Us</span>
       </Link>
-      <Link to="/chatbot" className={isActive('/chatbot') ? 'active' : ''}>
-        <FaRobot size={24} />
-        <span>AI Assist</span>
-      </Link>
+      <a
+  href="https://backend-ai-jw1g.onrender.com/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className={isActive('/chatbot') ? 'active' : ''}
+>
+  <FaRobot size={24} />
+  <span>Assistant</span>
+</a>
+
       <button onClick={toggleDarkMode} className="theme-toggle">
         {darkMode ? <FaSun size={24} /> : <FaMoon size={24} />}
       </button>

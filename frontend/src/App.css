@@ -1763,3 +1763,24 @@ nav a.active{
 .send-button {
   color: #007bff; /* Send button color (blue) */
 }
+
+.chat-user {
+  background: #007bff;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 15px 15px 0 15px;
+  margin: 8px 0;
+  text-align: right;
+  max-width: 70%;
+  margin-left: auto;
+}
+
+.chat-bot {
+  background: #f1f0f0;
+  color: #333;
+  padding: 8px 12px;
+  border-radius: 15px 15px 15px 0;
+  margin: 8px 0;
+  text-align: left;
+  max-width: 70%;
+}

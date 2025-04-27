@@ -59,7 +59,7 @@ const About = () => {
     },
     {
       id: 2,
-      name: "Prathyushaparanjape",
+      name: "Prathyusha Paranjape",
       role: "Frontend Developer",
       image: Pratyusha,
       bio: "Turning ideas into responsive UIs",

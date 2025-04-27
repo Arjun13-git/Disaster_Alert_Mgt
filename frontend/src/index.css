@@ -2,7 +2,6 @@
 
 .login-container {
     height: 100vh;
-    background-color: #f8f9fa;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -83,7 +82,6 @@
 
 .signup-container {
     height: 100vh;
-    background-color: #f8f9fa;
     display: flex;
     justify-content: center;
     align-items: center;
