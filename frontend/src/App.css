@@ -74,9 +74,9 @@ nav a.active{
 .nav-logo {
   height: 70px;
   width: auto;
-  border-radius: 5px;
+  border-radius: 25px;
   object-fit: contain;
-  margin: 0;
+  margin: 3px;
   padding: 0;
 }
 
@@ -1214,7 +1214,6 @@ nav a.active{
   }
 }
 
-/* Contributor Cards */
 .about-contributors {
   background-color: rgba(255, 255, 255, 0.85);
   border-radius: 10px;
@@ -1348,7 +1347,6 @@ nav a.active{
   transform: scale(1.2);
 }
 
-/* Testimonials */
 .about-testimonials {
   background-color: rgba(255, 255, 255, 0.85);
   border-radius: 10px;
@@ -1486,7 +1484,6 @@ nav a.active{
   background-color: #7f1d1d;
 }
 
-/* Contact Form */
 .contact-container {
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -1595,7 +1592,6 @@ nav a.active{
   }
 }
 
-/* Contact Form Additional Styles */
 .contact-note {
   font-size: 0.9rem;
   color: #555;
@@ -1662,7 +1658,6 @@ nav a.active{
   background-color: #6b7280;
 }
 
-/* Form Success Notification */
 .form-success-notification {
   position: fixed;
   top: 20px;
