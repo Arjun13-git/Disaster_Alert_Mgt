@@ -2,6 +2,9 @@ import React, { useState, useEffect, useRef } from 'react';
 import { FaShieldAlt, FaMapMarkedAlt, FaUsers, FaBell, FaRocket, FaEnvelope, FaPhone, FaLinkedin, FaGithub, FaQuoteLeft, FaQuoteRight, FaCheckCircle, FaTwitter } from 'react-icons/fa';
 import { useTheme } from '../context/ThemeContext';
 import profile_img from '../assets/profile_img.jpg';
+import Arjun from '../assets/Arjun.jpg';
+import Pratyusha from '../assets/Prathyusha.jpg';
+
 
 const About = () => {
   const { darkMode } = useTheme();
@@ -48,29 +51,29 @@ const About = () => {
     {
       id: 1,
       name: "Samith S Palan",
-      role: "Backend Developer",
+      role: "Frontend Developer",
       image: profile_img,
-      bio: "Backend dev who can also do frontend",
-      Twiter: "https://x.com/samith17118",
+      bio: "Frontend dev who can also do backend",
+      linkedin: "https://x.com/samith17118",
       github: "https://github.com/samithspalan"
     },
     {
       id: 2,
       name: "Prathyushaparanjape",
       role: "Frontend Developer",
-      image: "https://randomuser.me/api/portraits/women/44.jpg",
-      bio: "Passionate about creating intuitive interfaces for emergency response applications.",
-      linkedin: "https://linkedin.com",
-      github: "https://github.com"
+      image: Pratyusha,
+      bio: "Turning ideas into responsive UIs",
+      linkedin: "https://linkedin.cohttps://www.linkedin.com/in/prathyusha-k-570251293",
+      github: "https://github.com/Prathyusha-K-05"
     },
     {
       id: 3,
       name: "Arjun Shenoy",
       role: "Backend Developer",
-      image: "https://randomuser.me/api/portraits/men/67.jpg",
-      bio: "Former emergency responder with expertise in disaster preparedness and planning.",
-      linkedin: "https://linkedin.com",
-      github: "https://github.com"
+      image: Arjun,
+      bio: "Full-stack enthusiast bridging beautiful designs with powerful APIs",
+      linkedin: "http://www.linkedin.com/in/arjun-shenoy-r-586546285",
+      github: "https://github.com/Arjun13-git"
     }
   ];
   
