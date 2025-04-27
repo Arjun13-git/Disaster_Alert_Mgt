@@ -12,9 +12,8 @@ import SignupPage from './pages/signup';
 import { ThemeProvider } from './context/ThemeContext';
 import Usercontext, { data } from './context/Usercontext';
 import SOSButton from './components/SOSButton';
-import Chatbot from './pages/Chatbot';
 import 'leaflet/dist/leaflet.css';
-
+import Chatbot from './pages/Chatbot';
 const Layout = ({ children }) => (
   <>
     <Navbar />

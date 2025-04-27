@@ -6,7 +6,7 @@ export const data=createContext()
 function Usercontext({children}) {
   let navigate=useNavigate()
   let[userdata,setuserdata]=React.useState(null)
-    const serverUrl="http://localhost:8000"
+    const serverUrl="https://backend-ur7o.onrender.com"
     const getuserdata=async()=>{  
       try{
         let data1=await axios.get(serverUrl+"/getuserdata",{withCredentials:true})
