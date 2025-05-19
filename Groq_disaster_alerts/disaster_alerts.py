@@ -2,17 +2,23 @@ from flask import Flask, request, jsonify, send_file
 import requests
 from openai import OpenAI
 from datetime import datetime
+from dotenv import load_dotenv
+import os
+
+# Load env vars
+load_dotenv("hidden.env")
 
 app = Flask(__name__)
 
 # Initialize Groq client
 client = OpenAI(
-    api_key="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",
-    base_url="https://api.groq.com/openai/v1"
+    api_key=os.getenv("GROQ_API_KEY"),
+    base_url=os.getenv("GROQ_BASE_URL")
 )
 
 # OpenCage API key
-OPENCAGE_API_KEY = "c61fbca2ac50408a8723c6386052893b"
+OPENCAGE_API_KEY = os.getenv("OPENCAGE_API_KEY")
+
 
 messages = [{"role": "system", "content": "You are a disaster response assistant."}]
 
